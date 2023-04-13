@@ -38,7 +38,11 @@ public class AppInitializer extends Application {
 
 
     public void animatedAlertOnAction(ActionEvent actionEvent) {
-        Notifications notificationBuilder = Notifications.create().title(" Successfully.!").text(" Completed Successfully.").graphic(new ImageView(new Image("/assets/check.png"))).hideAfter(Duration.seconds(6)).position(Pos.BASELINE_CENTER);
+        Notifications notificationBuilder = Notifications.create().title(" Successfully.!")
+                .text(" Completed Successfully.")
+                .graphic(new ImageView(new Image("/assets/check.png")))
+                .hideAfter(Duration.seconds(6))
+                .position(Pos.BASELINE_CENTER);
         notificationBuilder.darkStyle();
         notificationBuilder.show();
     }

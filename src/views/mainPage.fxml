@@ -5,15 +5,19 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="mainContext" prefHeight="621.0" prefWidth="633.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppInitializer">
+<AnchorPane fx:id="mainContext" prefHeight="621.0" prefWidth="633.0" stylesheets="@../styles/2nd.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppInitializer">
    <children>
-      <Button layoutX="481.0" layoutY="182.0" mnemonicParsing="false" onAction="#loginOnAction" text="Login" />
-      <Button layoutX="464.0" layoutY="336.0" mnemonicParsing="false" onAction="#shutDownOnAction" text="Shut Down" />
-      <ImageView fitHeight="679.0" fitWidth="396.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <AnchorPane layoutX="385.0" layoutY="210.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #bdc3c7; -fx-background-radius: 15;">
+         <children>
+            <Button layoutX="42.0" layoutY="33.0" mnemonicParsing="false" onAction="#loginOnAction" prefHeight="26.0" prefWidth="116.0" style="-fx-border-radius: 10px;" text="Login" />
+            <Button layoutX="42.0" layoutY="87.0" mnemonicParsing="false" onAction="#animatedAlertOnAction" text="Animated Alert" />
+            <Button layoutX="42.0" layoutY="138.0" mnemonicParsing="false" onAction="#shutDownOnAction" prefHeight="26.0" prefWidth="116.0" text="Shut Down" />
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="592.0" fitWidth="356.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/pexels-photo-1535162.jpeg" />
+            <Image url="@../assets/81HPB2.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="451.0" layoutY="261.0" mnemonicParsing="false" onAction="#animatedAlertOnAction" text="Animated Alert" />
    </children>
 </AnchorPane>

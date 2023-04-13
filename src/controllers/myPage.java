@@ -3,7 +3,6 @@ package controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.chart.PieChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -13,7 +12,6 @@ import javafx.scene.layout.AnchorPane;
 import model.MyDb;
 import util.CrudUtil;
 import util.UILoader;
-
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,9 +22,9 @@ public class myPage {
     public TextField input3;
 
     public TableView<MyDb> table;
-    public TableColumn sampleCol;
-    public TableColumn sample2Col;
-    public TableColumn sample3Col;
+    public TableColumn<MyDb, String> sampleCol;
+    public TableColumn<MyDb, String> sample2Col;
+    public TableColumn<MyDb, String> sample3Col;
     public AnchorPane secondMainContext;
 
     public void initialize() {
@@ -50,7 +48,11 @@ public class myPage {
         ObservableList<MyDb> obList = FXCollections.observableArrayList();
 
         while (result.next()) {
-            obList.add(new MyDb(result.getString("Sample1"), result.getString("Sample2"), result.getString("Sample3")));
+            obList.add(new MyDb(
+                    result.getString("Sample1"),
+                    result.getString("Sample2"),
+                    result.getString("Sample3")
+            ));
         }
         table.setItems(obList);
         table.refresh();
